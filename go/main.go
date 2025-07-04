@@ -1,40 +1,40 @@
 package main
 
 import (
+	"example/nitric"
 	"fmt"
 	"log"
 	"net/http"
 	"os"
-	"veetoo/nitric/go/client"
-	"veetoo/pkg/middleware"
 )
 
 func main() {
 	router := http.NewServeMux()
 
-	nitric, err := client.NewClient()
+	app, err := nitric.NewClient()
 	if err != nil {
 		log.Fatalf("Failed to create nitric client: %v", err)
 	}
 
-	nitric.Something.Delete("test.txt")
-
 	// setup a basic http server
-	router.HandleFunc("GET /", func(w http.ResponseWriter, r *http.Request) {
-		// TODO: handled get request
+	router.HandleFunc("GET /hello/{name}", func(w http.ResponseWriter, r *http.Request) {
+		name := r.PathValue("name")
+
+		// Use the nitric client to access cloud resources
+		app.Files.Write("example.txt", []byte("Hello, "+name+"!"))
+
+		w.WriteHeader(http.StatusOK)
+		w.Write([]byte("Hello, " + name + "!"))
 	})
 
 	port := os.Getenv("PORT")
-	if port == "" {
-		port = "8080"
-	}
 
 	server := &http.Server{
 		Addr:    ":" + port,
-		Handler: middleware.Logging(router),
+		Handler: router,
 	}
 
-	fmt.Println("Server started on port ", port)
+	fmt.Printf("Server started on port %s, however use the entrypoint port to connect to the server\n", port)
 
 	server.ListenAndServe()
 }

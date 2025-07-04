@@ -1,21 +1,26 @@
+targets:
+  - file:platform.yaml
 name: go
-
-description: "Testing a simple nitric service"
-
-resources:
-  ingress:
-    type: entrypoint
-    routes:
-      /:
-        name: app
-
+description: Testing a simple nitric service
 services:
   app:
     env:
       TEST: test
-    dev:
-      script: go run main.go
     container:
       docker:
         dockerfile: Dockerfile
         context: .
+    dev:
+      script: go run main.go
+buckets:
+  files:
+    access:
+      app:
+        - read
+        - delete
+        - write
+entrypoints:
+  ingress:
+    routes:
+      /:
+        name: app
