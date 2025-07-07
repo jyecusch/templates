@@ -1,0 +1,22 @@
+{
+  "name": "typescript-template",
+  "version": "1.0.0",
+  "main": "dist/main.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/main.js",
+    "dev": "ts-node-dev main.ts"
+  },
+  "dependencies": {
+    "@veetwo/client": "^0.1.0-alpha.2",
+    "body-parser": "^1.20.2",
+    "express": "^4.21.2"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.21",
+    "@types/node": "^20.11.30",
+    "ts-node": "^10.9.2",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^5.8.3"
+  }
+}
