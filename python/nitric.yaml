@@ -1,0 +1,19 @@
+name: test
+targets:
+  - file:aws.yaml
+description: "Testing a simple nitric service"
+services:
+  processor:
+    dev:
+      script: uv run uvicorn main:app --host 0.0.0.0 --port $PORT
+    container:
+      docker:
+        dockerfile: main.dockerfile
+        context: .
+entrypoints:
+  ingress:
+    routes:
+      /:
+        name: processor
+buckets:
+  image: {}
