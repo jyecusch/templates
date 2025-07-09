@@ -17,7 +17,6 @@ buckets:
     access:
       app:
         - read
-        - delete
         - write
 entrypoints:
   ingress:

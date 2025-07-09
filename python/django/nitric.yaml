@@ -1,14 +1,14 @@
-name: typescript
+name: python-django
 targets:
   - suga/aws@1
 description: "Testing a simple nitric service"
 services:
   processor:
     dev:
-      script: npm run dev
+      script: python manage.py runserver 0.0.0.0:$PORT
     container:
       docker:
-        dockerfile: main.dockerfile
+        dockerfile: Dockerfile
         context: .
 entrypoints:
   ingress:
@@ -16,4 +16,7 @@ entrypoints:
       /:
         name: processor
 buckets:
-  image: {}
+  image:
+    access:
+      processor:
+        - all

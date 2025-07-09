@@ -1,0 +1,2 @@
+Django>=4.2.0
+nitric_client @ git+https://github.com/nitrictech/nitric.git@next#egg=nitric_client&subdirectory=client/python

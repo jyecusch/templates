@@ -1,0 +1,22 @@
+name: typescript
+targets:
+  - suga/aws@1
+description: "Testing a simple nitric service"
+services:
+  processor:
+    dev:
+      script: npm run dev
+    container:
+      docker:
+        dockerfile: Dockerfile
+        context: .
+entrypoints:
+  ingress:
+    routes:
+      /:
+        name: processor
+buckets:
+  image:
+    access:
+      processor:
+        - all
