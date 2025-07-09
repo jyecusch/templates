@@ -19,7 +19,7 @@ uvicorn main:app --host 0.0.0.0 --port 4000
 script: ./dev.sh
 ```
 
-## Step 6: Testing
+## Step 3: Testing
 
 ```bash
 curl -X POST http://localhost:4000/write/test-object.txt \
