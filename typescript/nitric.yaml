@@ -1,4 +1,4 @@
-name: test
+name: typescript
 targets:
   - file:aws.yaml
 description: "Testing a simple nitric service"
@@ -17,4 +17,3 @@ entrypoints:
         name: processor
 buckets:
   image: {}
-    

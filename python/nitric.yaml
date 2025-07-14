@@ -1,4 +1,4 @@
-name: test
+name: python
 targets:
   - file:aws.yaml
 description: "Testing a simple nitric service"
