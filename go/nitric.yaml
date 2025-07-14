@@ -1,5 +1,5 @@
 targets:
-  - file:platform.yaml
+  - suga/aws@1
 name: go
 description: Testing a simple nitric service
 services:

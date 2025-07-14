@@ -1,6 +1,6 @@
 name: typescript
 targets:
-  - file:aws.yaml
+  - suga/aws@1
 description: "Testing a simple nitric service"
 services:
   processor:
