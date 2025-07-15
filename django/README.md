@@ -1,32 +1,37 @@
 
-# Nitric Python Example Project (pip version)
+# Nitric Django Example Project
 
-## Step 1: Create and activate a virtual environment using `pip` and `venv`
+A Django web service template using the Nitric framework for cloud resource access.
 
+## Prerequisites
+- Python 3.10+
+- pip
+- [Nitric CLI](https://nitric.io/docs/installation)
+
+## Setup
 ```bash
 python3 -m venv .venv
 source .venv/bin/activate
-pip3 install -r requirements.txt
+pip install -r requirements.txt
 ```
 
-## Step 2: Run your application with Nitric
-
+## Running the Application (Development)
 ```bash
-nitric start
+nitric dev
 ```
-
 This will start your Django application using the script defined in `nitric.yaml`:
-
 ```yaml
 script: python manage.py runserver 0.0.0.0:$PORT
 ```
 
-## Step 3: Testing
-
+## Example Usage
+Write an object:
 ```bash
 curl -X POST http://localhost:4000/write/test-object.txt \
   -H "Content-Type: text/plain" \
   --data "Hello from curl!"
-
+```
+Read an object:
+```bash
 curl http://localhost:4000/read/test-object.txt
 ```

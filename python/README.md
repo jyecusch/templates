@@ -1,30 +1,36 @@
-# Nitric Python Example Project
+# Nitric Python FastAPI Example Project
 
-## Step 1: Create and activate a virtual environment using `uv`
+A FastAPI web service template using the Nitric framework for cloud resource access.
 
+## Prerequisites
+- Python 3.10+
+- [uv](https://github.com/astral-sh/uv)
+- [Nitric CLI](https://nitric.io/docs/installation)
+
+## Setup
 ```bash
 uv venv
 source .venv/bin/activate
 uv sync
 ```
 
-## Step 2: Run your application
-
+## Running the Application (Development)
 ```bash
-export PYTHONPATH=src
-uvicorn main:app --host 0.0.0.0 --port 4000
+nitric dev
+```
+This will start your FastAPI application using the script defined in `nitric.yaml`:
+```yaml
+script: uv run uvicorn main:app --host 0.0.0.0 --port $PORT
 ```
 
-```
-script: ./dev.sh
-```
-
-## Step 3: Testing
-
+## Example Usage
+Write an object:
 ```bash
 curl -X POST http://localhost:4000/write/test-object.txt \
   -H "Content-Type: text/plain" \
   --data "Hello from curl!"
-
+```
+Read an object:
+```bash
 curl http://localhost:4000/read/test-object.txt
 ```
