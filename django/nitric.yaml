@@ -1,0 +1,19 @@
+targets:
+  - file:aws.yaml
+name: test
+description: Testing a simple nitric service
+services:
+  processor:
+    container:
+      docker:
+        dockerfile: main.dockerfile
+        context: .
+    dev:
+      script: python manage.py runserver 0.0.0.0:$PORT
+buckets:
+  image: {}
+entrypoints:
+  ingress:
+    routes:
+      /:
+        name: processor

@@ -1,0 +1,48 @@
+"""Django views for image storage operations."""
+
+import asyncio
+import traceback
+from django.http import HttpResponse, JsonResponse
+from django.views.decorators.csrf import csrf_exempt
+from django.views.decorators.http import require_http_methods
+from nitric.client import NitricClient
+
+# Initialize Nitric client
+nitric = NitricClient()
+
+
+@require_http_methods(["GET"])
+def hello(request):
+    """Return a simple hello world response."""
+    return HttpResponse("Hello, World!", content_type="text/plain")
+
+
+@require_http_methods(["GET"])
+def read_from_bucket(request, name):
+    """Read image content from bucket by name."""
+    try:
+        # Run the async operation in a sync context
+        # loop = asyncio.new_event_loop()
+        # asyncio.set_event_loop(loop)
+        # try:
+            # contents = loop.run_until_complete(
+            contents = nitric.image.read(name)
+            return HttpResponse(contents.decode("utf-8"), content_type="text/plain")
+        # finally:
+        #    loop.close()
+    except Exception as e:
+        return JsonResponse({"detail": str(e)}, status=500)
+
+
+@csrf_exempt
+@require_http_methods(["POST"])
+def write_to_bucket(request, name):
+    """Write image content to bucket by name."""
+    try:
+            body = request.body
+            nitric.image.write(name, body)
+            return HttpResponse(f"File '{name}' written to bucket.", content_type="text/plain")
+
+    except Exception as e:
+        traceback.print_exc()
+        return JsonResponse({"detail": str(e)}, status=500) 

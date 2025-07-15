@@ -9,7 +9,7 @@ dependencies = [
   "uvicorn",
   "grpcio",
   "grpcio-tools",
-  "veetwo_client >= 0.1.0",
+  "nitric_client @ git+https://github.com/nitrictech/nitric.git@next#egg=nitric_client&subdirectory=client/python",
 ]
 
 [build-system]

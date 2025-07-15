@@ -1,24 +1,27 @@
-# Nitric TypeScript Example Project
 
-A TypeScript (Express) web service template using the Nitric framework for cloud resource access.
+# Nitric Django Example Project
+
+A Django web service template using the Nitric framework for cloud resource access.
 
 ## Prerequisites
-- Node.js 18+
-- npm
+- Python 3.10+
+- pip
 - [Nitric CLI](https://nitric.io/docs/installation)
 
 ## Setup
 ```bash
-npm install
+python3 -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
 ```
 
 ## Running the Application (Development)
 ```bash
 nitric dev
 ```
-This will start your Express application using the script defined in `nitric.yaml`:
+This will start your Django application using the script defined in `nitric.yaml`:
 ```yaml
-script: npm run dev
+script: python manage.py runserver 0.0.0.0:$PORT
 ```
 
 ## Example Usage
