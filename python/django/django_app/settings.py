@@ -14,6 +14,9 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
+# Disable automatic slash appending to URLs
+APPEND_SLASH = True
+
 # Application definition
 INSTALLED_APPS = [
     'django.contrib.admin',

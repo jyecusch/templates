@@ -19,7 +19,7 @@ async def hello():
 async def read_from_bucket(name: str):
     """Read image content from bucket by name."""
     try:
-        contents = await nitric.image.read(name)
+        contents = nitric.image.read(name)
         return PlainTextResponse(contents.decode("utf-8"))
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e)) from e
@@ -30,7 +30,7 @@ async def write_to_bucket(name: str, request: Request):
     """Write image content to bucket by name."""
     try:
         body = await request.body()
-        await nitric.image.write(name, body)
+        nitric.image.write(name, body)
         return PlainTextResponse(f"File '{name}' written to bucket.")
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e)) from e
