@@ -10,6 +10,12 @@ A TypeScript (Express) web service template using the Nitric framework for cloud
 
 ## Setup
 
+### Build the Nitric SDK
+```bash
+make generate
+```
+
+### Install dependencies
 ```bash
 npm install
 ```

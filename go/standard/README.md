@@ -7,6 +7,13 @@ A Go web service template using the Nitric framework for cloud resource access.
 - [Nitric CLI](https://nitric.io/docs/installation)
 
 ## Setup
+
+### Build the Nitric SDK
+```bash
+make generate
+```
+
+### Install dependencies
 ```bash
 go mod tidy
 go mod download

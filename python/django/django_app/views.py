@@ -21,15 +21,8 @@ def hello(request):
 def read_from_bucket(request, name):
     """Read image content from bucket by name."""
     try:
-        # Run the async operation in a sync context
-        # loop = asyncio.new_event_loop()
-        # asyncio.set_event_loop(loop)
-        # try:
-            # contents = loop.run_until_complete(
-            contents = nitric.image.read(name)
-            return HttpResponse(contents.decode("utf-8"), content_type="text/plain")
-        # finally:
-        #    loop.close()
+        contents = nitric.image.read(name)
+        return HttpResponse(contents.decode("utf-8"), content_type="text/plain")
     except Exception as e:
         return JsonResponse({"detail": str(e)}, status=500)
 

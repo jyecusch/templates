@@ -8,6 +8,13 @@ A FastAPI web service template using the Nitric framework for cloud resource acc
 - [Nitric CLI](https://nitric.io/docs/installation)
 
 ## Setup
+
+### Build the Nitric SDK
+```bash
+make generate
+```
+
+### Install dependencies
 ```bash
 uv venv
 source .venv/bin/activate

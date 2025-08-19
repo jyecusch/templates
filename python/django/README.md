@@ -10,6 +10,12 @@ A Django web service template using the Nitric framework for cloud resource acce
 
 ## Setup
 
+### Build the Nitric SDK
+```bash
+make generate
+```
+
+### Install dependencies
 ```bash
 python3 -m venv .venv
 source .venv/bin/activate
