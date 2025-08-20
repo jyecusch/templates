@@ -2,13 +2,13 @@ install: generate
 	npm install
 
 generate:
-	nitric generate --ts --ts-out ./nitric
+	suga generate --ts --ts-out ./suga
 
 version:
-	nitric version
+	suga version
 
 run:
-	nitric dev
+	suga dev
 
 build:
-	nitric build
+	suga build

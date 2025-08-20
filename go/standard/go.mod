@@ -2,15 +2,15 @@ module example
 
 go 1.24.3
 
-// Remove once nitric is officially released
+// Remove once suga is officially released
 replace (
-	github.com/nitrictech/nitric/client => github.com/nitrictech/nitric/client v0.0.0-20250703085005-05e73560d546
-	github.com/nitrictech/nitric/proto => github.com/nitrictech/nitric/proto v0.0.0-20250703085005-05e73560d546
+	github.com/nitrictech/suga/client => github.com/nitrictech/suga/client v0.0.0-20250703085005-05e73560d546
+	github.com/nitrictech/suga/proto => github.com/nitrictech/suga/proto v0.0.0-20250703085005-05e73560d546
 )
 
 require (
-	github.com/nitrictech/nitric/client v0.0.0-00010101000000-000000000000
-	github.com/nitrictech/nitric/proto v0.0.0-00010101000000-000000000000
+	github.com/nitrictech/suga/client v0.0.0-00010101000000-000000000000
+	github.com/nitrictech/suga/proto v0.0.0-00010101000000-000000000000
 	google.golang.org/grpc v1.73.0
 )
 

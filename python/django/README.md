@@ -1,16 +1,16 @@
-# Nitric Django Example Project
+# Suga Django Example Project
 
-A Django web service template using the Nitric framework for cloud resource access.
+A Django web service template using the Suga framework for cloud resource access.
 
 ## Prerequisites
 
 - Python 3.10+
 - pip
-- [Nitric CLI](https://nitric.io/docs/installation)
+- [Suga CLI](https://suga.io/docs/installation)
 
 ## Setup
 
-### Build the Nitric SDK
+### Build the Suga SDK
 ```bash
 make generate
 ```
@@ -25,10 +25,10 @@ pip install -r requirements.txt
 ## Running the Application (Development)
 
 ```bash
-nitric dev
+suga dev
 ```
 
-This will start your Django application using the script defined in `nitric.yaml`:
+This will start your Django application using the script defined in `suga.yaml`:
 
 ```yaml
 script: python manage.py runserver 0.0.0.0:$PORT

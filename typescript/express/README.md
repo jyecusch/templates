@@ -1,16 +1,16 @@
-# Nitric TypeScript Example Project
+# Suga TypeScript Example Project
 
-A TypeScript (Express) web service template using the Nitric framework for cloud resource access.
+A TypeScript (Express) web service template using the Suga framework for cloud resource access.
 
 ## Prerequisites
 
 - Node.js 18+
 - npm
-- [Nitric CLI](https://nitric.io/docs/installation)
+- [Suga CLI](https://suga.io/docs/installation)
 
 ## Setup
 
-### Build the Nitric SDK
+### Build the Suga SDK
 ```bash
 make generate
 ```
@@ -23,10 +23,10 @@ npm install
 ## Running the Application (Development)
 
 ```bash
-nitric dev
+suga dev
 ```
 
-This will start your Express application using the script defined in `nitric.yaml`:
+This will start your Express application using the script defined in `suga.yaml`:
 
 ```yaml
 script: npm run dev

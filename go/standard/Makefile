@@ -3,13 +3,13 @@ install: generate
 	go mod download
 
 generate:
-	nitric generate --go --go-out ./nitric --go-package-name nitric
+	suga generate --go --go-out ./suga --go-package-name suga
 
 version:
-	nitric version
+	suga version
 
 run:
-	nitric dev
+	suga dev
 
 build:
-	nitric build
+	suga build

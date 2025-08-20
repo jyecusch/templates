@@ -5,10 +5,10 @@ import traceback
 from django.http import HttpResponse, JsonResponse
 from django.views.decorators.csrf import csrf_exempt
 from django.views.decorators.http import require_http_methods
-from nitric.client import NitricClient
+from suga.client import SugaClient
 
-# Initialize Nitric client
-nitric = NitricClient()
+# Initialize Suga client
+suga = SugaClient()
 
 
 @require_http_methods(["GET"])
@@ -21,7 +21,7 @@ def hello(request):
 def read_from_bucket(request, name):
     """Read image content from bucket by name."""
     try:
-        contents = nitric.image.read(name)
+        contents = suga.image.read(name)
         return HttpResponse(contents.decode("utf-8"), content_type="text/plain")
     except Exception as e:
         return JsonResponse({"detail": str(e)}, status=500)
@@ -33,7 +33,7 @@ def write_to_bucket(request, name):
     """Write image content to bucket by name."""
     try:
             body = request.body
-            nitric.image.write(name, body)
+            suga.image.write(name, body)
             return HttpResponse(f"File '{name}' written to bucket.", content_type="text/plain")
 
     except Exception as e:

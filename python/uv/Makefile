@@ -2,13 +2,13 @@ install: generate
 	uv sync
 
 generate:
-	nitric generate --python --python-out ./nitric
+	suga generate --python --python-out ./suga
 
 version:
-	nitric version
+	suga version
 
 run:
-	nitric dev
+	suga dev
 
 build:
-	nitric build
+	suga build

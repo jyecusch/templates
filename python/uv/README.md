@@ -1,15 +1,15 @@
-# Nitric Python FastAPI Example Project
+# Suga Python FastAPI Example Project
 
-A FastAPI web service template using the Nitric framework for cloud resource access.
+A FastAPI web service template using the Suga framework for cloud resource access.
 
 ## Prerequisites
 - Python 3.10+
 - [uv](https://github.com/astral-sh/uv)
-- [Nitric CLI](https://nitric.io/docs/installation)
+- [Suga CLI](https://suga.io/docs/installation)
 
 ## Setup
 
-### Build the Nitric SDK
+### Build the Suga SDK
 ```bash
 make generate
 ```
@@ -23,9 +23,9 @@ uv sync
 
 ## Running the Application (Development)
 ```bash
-nitric dev
+suga dev
 ```
-This will start your FastAPI application using the script defined in `nitric.yaml`:
+This will start your FastAPI application using the script defined in `suga.yaml`:
 ```yaml
 script: uv run uvicorn main:app --host 0.0.0.0 --port $PORT
 ```
