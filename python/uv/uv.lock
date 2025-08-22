@@ -338,6 +338,37 @@ wheels = [
 ]
 
 [[package]]
+name = "suga-client"
+version = "0.1.0"
+source = { git = "https://github.com/nitrictech/suga.git?subdirectory=client%2Fpython&rev=main#c54426614b808237504d22883f0823417044b34f" }
+dependencies = [
+    { name = "grpcio" },
+    { name = "grpcio-tools" },
+    { name = "protobuf" },
+]
+
+[[package]]
+name = "suga-python-example"
+version = "0.1.0"
+source = { editable = "." }
+dependencies = [
+    { name = "fastapi" },
+    { name = "grpcio" },
+    { name = "grpcio-tools" },
+    { name = "suga-client" },
+    { name = "uvicorn" },
+]
+
+[package.metadata]
+requires-dist = [
+    { name = "fastapi" },
+    { name = "grpcio" },
+    { name = "grpcio-tools" },
+    { name = "suga-client", git = "https://github.com/nitrictech/suga.git?subdirectory=client%2Fpython&rev=main" },
+    { name = "uvicorn" },
+]
+
+[[package]]
 name = "typing-extensions"
 version = "4.14.0"
 source = { registry = "https://pypi.org/simple" }
@@ -370,39 +401,4 @@ dependencies = [
 sdist = { url = "https://files.pythonhosted.org/packages/de/ad/713be230bcda622eaa35c28f0d328c3675c371238470abdea52417f17a8e/uvicorn-0.34.3.tar.gz", hash = "sha256:35919a9a979d7a59334b6b10e05d77c1d0d574c50e0fc98b8b1a0f165708b55a", size = 76631 }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/6d/0d/8adfeaa62945f90d19ddc461c55f4a50c258af7662d34b6a3d5d1f8646f6/uvicorn-0.34.3-py3-none-any.whl", hash = "sha256:16246631db62bdfbf069b0645177d6e8a77ba950cfedbfd093acef9444e4d885", size = 62431 },
-]
-
-[[package]]
-name = "v2-testing-python"
-version = "0.1.0"
-source = { editable = "." }
-dependencies = [
-    { name = "fastapi" },
-    { name = "grpcio" },
-    { name = "grpcio-tools" },
-    { name = "uvicorn" },
-    { name = "veetwo-client" },
-]
-
-[package.metadata]
-requires-dist = [
-    { name = "fastapi" },
-    { name = "grpcio" },
-    { name = "grpcio-tools" },
-    { name = "uvicorn" },
-    { name = "veetwo-client", specifier = ">=0.1.0" },
-]
-
-[[package]]
-name = "veetwo-client"
-version = "0.1.0"
-source = { registry = "https://pypi.org/simple" }
-dependencies = [
-    { name = "grpcio" },
-    { name = "grpcio-tools" },
-    { name = "protobuf" },
-]
-sdist = { url = "https://files.pythonhosted.org/packages/17/aa/db3b1f7dd0a5527c79552e4961b2199f4f2f08730335763c6b0da4060596/veetwo_client-0.1.0.tar.gz", hash = "sha256:d853f5bb75563ad224cc49ec59c6920b35aadc87fbf90947d77296189a355be3", size = 9983 }
-wheels = [
-    { url = "https://files.pythonhosted.org/packages/ce/92/97389e72b59caa67a9be79a9f3acb5ce491124ebbc77fee023f9b04712c8/veetwo_client-0.1.0-py3-none-any.whl", hash = "sha256:3b074146f1c3a6a31c71d9ce45cfc94d2c28dd4a2a9db1be1491ff900185b903", size = 12588 },
 ]
