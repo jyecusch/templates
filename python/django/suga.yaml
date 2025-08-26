@@ -1,7 +1,7 @@
+name: python-django-pip
+description: A Django web service template using the Suga framework for cloud resource access.
 targets:
   - suga/aws@1
-name: python-django
-description: Testing a simple nitric service
 services:
   processor:
     container:

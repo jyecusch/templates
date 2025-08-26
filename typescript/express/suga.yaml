@@ -1,4 +1,4 @@
-name: typescript
+name: typescript-express
 targets:
   - suga/aws@1
 description: "Testing a simple nitric service"

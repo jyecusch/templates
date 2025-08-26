@@ -1,7 +1,7 @@
 targets:
   - suga/aws@1
-name: go
-description: Testing a simple nitric service
+name: go-standard
+description: A Go web service template using the Suga framework for cloud resource access.
 services:
   app:
     env:

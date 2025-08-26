@@ -6,16 +6,18 @@ A TypeScript (Express) web service template using the Suga framework for cloud r
 
 - Node.js 18+
 - npm
-- [Suga CLI](https://suga.io/docs/installation)
+- [Suga CLI](https://docs.addsuga.com/cli/installation)
 
 ## Setup
 
 ### Build the Suga SDK
+
 ```bash
 make generate
 ```
 
 ### Install dependencies
+
 ```bash
 npm install
 ```

@@ -1,7 +1,7 @@
-name: python-uv
+name: python-fastapi-uv
+description: A FastAPI web service template using the Suga framework for cloud resource access.
 targets:
   - suga/aws@1
-description: "Testing a simple nitric service"
 services:
   processor:
     dev:
