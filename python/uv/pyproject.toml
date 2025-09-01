@@ -1,5 +1,5 @@
 [project]
-name = "nitric-python-example"
+name = "suga-python-example"
 version = "0.1.0"
 description = "Add your description here"
 readme = "README.md"
@@ -9,7 +9,7 @@ dependencies = [
   "uvicorn",
   "grpcio",
   "grpcio-tools",
-  "veetwo_client >= 0.1.0",
+  "suga_client @ git+https://github.com/nitrictech/suga.git@main#egg=suga_client&subdirectory=client/python",
 ]
 
 [build-system]

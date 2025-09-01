@@ -1,0 +1,2 @@
+Django>=4.2.0
+suga_client @ git+https://github.com/nitrictech/suga.git@main#egg=suga_client&subdirectory=client/python

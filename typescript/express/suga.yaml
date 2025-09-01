@@ -1,14 +1,14 @@
-name: python
+name: typescript-express
 targets:
   - suga/aws@1
 description: "Testing a simple nitric service"
 services:
   processor:
     dev:
-      script: uv run uvicorn main:app --host 0.0.0.0 --port $PORT
+      script: npm run dev
     container:
       docker:
-        dockerfile: main.dockerfile
+        dockerfile: Dockerfile
         context: .
 entrypoints:
   ingress:
@@ -16,4 +16,7 @@ entrypoints:
       /:
         name: processor
 buckets:
-  image: {}
+  image:
+    access:
+      processor:
+        - all

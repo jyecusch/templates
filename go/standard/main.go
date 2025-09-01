@@ -1,7 +1,7 @@
 package main
 
 import (
-	"example/nitric"
+	"example/suga"
 	"fmt"
 	"log"
 	"net/http"
@@ -11,16 +11,16 @@ import (
 func main() {
 	router := http.NewServeMux()
 
-	app, err := nitric.NewClient()
+	app, err := suga.NewClient()
 	if err != nil {
-		log.Fatalf("Failed to create nitric client: %v", err)
+		log.Fatalf("Failed to create suga client: %v", err)
 	}
 
 	// setup a basic http server
 	router.HandleFunc("GET /hello/{name}", func(w http.ResponseWriter, r *http.Request) {
 		name := r.PathValue("name")
 
-		// Use the nitric client to access cloud resources
+		// Use the suga client to access cloud resources
 		app.Files.Write("example.txt", []byte("Hello, "+name+"!"))
 
 		w.WriteHeader(http.StatusOK)
