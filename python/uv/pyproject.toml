@@ -9,7 +9,7 @@ dependencies = [
   "uvicorn",
   "grpcio",
   "grpcio-tools",
-  "suga_client @ git+https://github.com/nitrictech/suga.git@main#egg=suga_client&subdirectory=client/python",
+  "suga-client==0.0.1rc3",
 ]
 
 [build-system]

@@ -8,7 +8,7 @@
     "dev": "ts-node-dev main.ts"
   },
   "dependencies": {
-    "@suga/client": "https://gitpkg.vercel.app/nitrictech/suga/client/node?main",
+    "@nitric/suga-client": "0.0.1-rc.3",
     "body-parser": "^1.20.2",
     "express": "^4.21.2"
   },
