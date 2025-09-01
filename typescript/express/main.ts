@@ -1,5 +1,5 @@
 import express, { Request, Response } from "express";
-import { SugaClient } from "./suga/client";
+import { SugaClient } from "@/suga/client";
 import bodyParser from "body-parser";
 
 const app = express();

@@ -5,7 +5,8 @@
   "scripts": {
     "build": "tsc",
     "start": "node dist/main.js",
-    "dev": "ts-node-dev main.ts"
+    "dev": "ts-node-dev main.ts",
+    "generate": "suga generate --ts --ts-out ./suga/client"
   },
   "dependencies": {
     "@nitric/suga-client": "0.0.1-rc.3",
