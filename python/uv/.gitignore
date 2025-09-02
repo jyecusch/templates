@@ -6,3 +6,12 @@ __pycache__/
 .coverage
 .DS_Store
 .nitric
+.suga
+
+# Environment variables
+.env
+.env.local
+
+# Distribution / packaging
+dist/
+build/
