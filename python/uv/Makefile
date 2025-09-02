@@ -2,7 +2,7 @@ install: generate
 	uv sync
 
 generate:
-	suga generate --python --python-out ./suga
+	suga generate --python --python-out ./suga_gen
 
 version:
 	suga version

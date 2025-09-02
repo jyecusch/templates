@@ -5,7 +5,7 @@ import traceback
 from django.http import HttpResponse, JsonResponse
 from django.views.decorators.csrf import csrf_exempt
 from django.views.decorators.http import require_http_methods
-from suga.client import SugaClient
+from suga_gen.client import SugaClient
 
 # Initialize Suga client
 suga = SugaClient()

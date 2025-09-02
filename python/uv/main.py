@@ -3,7 +3,7 @@
 from fastapi import FastAPI, HTTPException, Request
 from fastapi.responses import PlainTextResponse
 
-from suga.client import SugaClient
+from suga_gen.client import SugaClient
 
 app = FastAPI()
 suga = SugaClient()
