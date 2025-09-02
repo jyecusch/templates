@@ -12,5 +12,8 @@
       "@/*": ["./*"]
     }
   },
+  "ts-node": {
+    "require": ["tsconfig-paths/register"]
+  },
   "include": ["main.ts"]
 } 
